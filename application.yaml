@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/hwchiu/hiskio-gitops-demo-manifest.git
+    repoURL: https://github.com/hwchiu/hiskio-gitops-demo-manifest
     targetRevision: HEAD
     path: .
 
