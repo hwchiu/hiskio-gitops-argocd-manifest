@@ -18,7 +18,7 @@ spec:
       version: v3
 
   destination:
-    server: https://172.19.0.4:6443
+    server: https://172.19.0.6:6443
     namespace: default
 
   # Sync policy
@@ -37,5 +37,3 @@ spec:
         duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
         factor: 2 # a factor to multiply the base duration after each failed retry
         maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
-
----
