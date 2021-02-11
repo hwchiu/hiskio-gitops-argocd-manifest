@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitops-argocd-prod
+  name: gitops-argocd-stage
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -14,10 +14,10 @@ spec:
 
     helm:
       # Release name override (defaults to application name)
-      releaseName: gitops-argocd-prod
+      releaseName: gitops-argocd-stage
 
       valueFiles:
-      - values-prod.yaml
+      - values-stage.yaml
       version: v3
 
   destination:
