@@ -13,9 +13,6 @@ spec:
     path: .
 
     helm:
-      # Release name override (defaults to application name)
-      releaseName: gitops-argocd-stage
-
       valueFiles:
       - values-stage.yaml
       version: v3
