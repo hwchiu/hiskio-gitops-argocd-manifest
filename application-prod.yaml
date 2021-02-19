@@ -19,7 +19,7 @@ spec:
       version: v3
 
   destination:
-    server: https://172.19.0.4:6443
+    server: https://172.19.0.6:6443
     namespace: default
 
   # Sync policy
