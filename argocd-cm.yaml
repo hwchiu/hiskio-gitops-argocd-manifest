@@ -7,6 +7,9 @@ metadata:
     app.kubernetes.io/name: argocd-cm
     app.kubernetes.io/part-of: argocd
 data:
+  # Enables application status badge feature
+  statusbadge.enabled: "true"
+
   repositories: |
     - url: https://github.com/hwchiu/hiskio-gitops-argocd-manifest.git
     - url: https://github.com/hwchiu/hiskio-gitops-demo-manifest.git
