@@ -24,7 +24,7 @@ spec:
         - uid_entrypoint.sh
         - argocd-repo-server
         - --parallelismlimit
-        - 1
+        - '1'
         - --redis
         - $(ARGOCD_REDIS_SERVICE):6379
         ports:
