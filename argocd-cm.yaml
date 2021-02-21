@@ -9,7 +9,32 @@ metadata:
 data:
   # Enables application status badge feature
   statusbadge.enabled: "true"
-
+  url: https://172.17.8.111:8888
+  dex.config: |
+    connectors:
+      - type: ldap
+        id: ldap
+        name: LDAP
+        config:
+          host: 172.17.8.111:389
+          insecureNoSSL: true
+          bindDN: cn=admin,dc=hwchiu,dc=com
+          bindPW: password
+          startTLS: false
+          userSearch:
+            baseDN: dc=hwchiu,dc=com
+            filter: "(objectClass=posixAccount)"
+            username: uid
+            idAttr: uid
+            emailAttr: mail
+            nameAttr: uid
+          groupSearch:
+            baseDN: ou=groups,dc=hwchiu,dc=com
+            filter: "(objectClass=posixGroup)"
+            userMatchers:
+            - userAttr: uid
+              groupAttr: memberUid
+            nameAttr: cn
   repositories: |
     - url: https://github.com/hwchiu/hiskio-gitops-argocd-manifest.git
     - url: https://github.com/hwchiu/hiskio-gitops-demo-manifest.git
