@@ -18,18 +18,18 @@ data:
         config:
           host: 172.17.8.111:389
           insecureNoSSL: true
-          bindDN: cn=admin,dc=scytalelabs,dc=com
-          bindPW: adminPassword
+          bindDN: cn=admin,dc=hwchiu,dc=com
+          bindPW: password
           startTLS: false
           userSearch:
-            baseDN: dc=scytalelabs,dc=com
+            baseDN: dc=hwchiu,dc=com
             filter: "(objectClass=posixAccount)"
             username: uid
             idAttr: uid
             emailAttr: mail
             nameAttr: uid
           groupSearch:
-            baseDN: cn=group,dc=scytalelabs,dc=com
+            baseDN: cn=group,dc=hwchiu,dc=com
             filter: "(objectClass=posixGroup)"
             userMatchers:
             - userAttr: uid
