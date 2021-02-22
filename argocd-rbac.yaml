@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: argocd-rbac-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  policy.csv: |
+    p, role:gitops-dev, applications, *, dev-project/*, allow
+    p, role:gitops-dev, projects, get, dev-project, allow
+    p, role:gitops-dev, repositories, get, *, allow
+    p, role:gitops-dev, clusters, get, *, allow
+    g, devs, role:gitops-dev
+
+    p, role:gitops-pm, applications, get, */*, allow
+    p, role:gitops-pm, projects, get, *, allow
+    p, role:gitops-pm, repositories, get, *, allow
+    p, role:gitops-pm, clusters, get, *, allow
+    g, pms, role:gitops-pm
+
+    p, role:gitops-op, applications, *, */*, allow
+    p, role:gitops-op, projects, *, *, allow
+    p, role:gitops-op, repositories, *, *, allow
+    p, role:gitops-op, clusters, *, *, allow
+    p, role:gitops-op, accounts, *, *, allow
+    p, role:gitops-op, certificates, *, *, allow
+    p, role:gitops-op, gpgkeys, *, *, allow
+    g, ops, role:gitops-op
+  policy.default: ""
